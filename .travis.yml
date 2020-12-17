@@ -6,7 +6,7 @@ compiler:
   - gcc
 
 before_script:
-  - apt-get update && apt-get install -y clang-format-6.0 git-core
+  - sudo apt-get update && sudo apt-get install -y clang-format-6.0 git-core
 
 script:
   - echo `which clang-format-6.0`
