@@ -19,6 +19,5 @@ compiler:
 script: 
   - cd ${TRAVIS_BUILD_DIR}
 
-
 after_success:
 - cd ${TRAVIS_BUILD_DIR}
