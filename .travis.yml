@@ -13,8 +13,6 @@ addons:
       - clang-format-6.0
 
 script:
-  - cd ${TRAVIS_BUILD_DIR}
-  - ./run-clang-format.py -r src
   - export CC=gcc-7
   - export CXX=g++-7
   - cmake --version
