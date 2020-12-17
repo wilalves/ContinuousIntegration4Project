@@ -7,14 +7,14 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
-      - key_url: 'http://apt.llvm.org/llvm-snapshot.gpg.key'
+      - llvm-toolchain-precise
     packages:
       - g++-7
-      - clang-format-5.0
+      - clang-format-6.0
 
 script:
-  - run-clang-format.py -r main.c
+  - cd ${TRAVIS_BUILD_DIR}
+  - python3 run-clang-format.py -r main.c
   - export CC=gcc-7
   - export CXX=g++-7
   - cmake --version
