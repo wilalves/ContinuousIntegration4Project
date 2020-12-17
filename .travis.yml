@@ -1,21 +1,12 @@
 language: c
 dist: bionic
-
-# Install LLVM
-addons:
-  apt:
-    update: true
-    sources:
-      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main'
-        key_url: 'http://apt.llvm.org/llvm-snapshot.gpg.key'
-    packages:
-      - llvm-7
-      - llvm-7-dev
-      - llvm-7-tools
-      - clang-7
-      - libclang-common-7-dev
-      - libclang-7-dev
+sudo: false
 
 compiler:
   - clang
   - gcc
+
+script:
+  - mkdir build && cd build
+  - cmake .. && make
+  - ./myexample
