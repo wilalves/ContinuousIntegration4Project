@@ -1,5 +1,5 @@
 ---
-Language:        C
+Language:        c
 # BasedOnStyle:  LLVM
 AccessModifierOffset: -2
 AlignAfterOpenBracket: Align

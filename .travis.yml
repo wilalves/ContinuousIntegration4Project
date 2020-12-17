@@ -1,21 +1,25 @@
-language: c
-compiler: gcc
-sudo: false
+language: cpp
+dist: bionic
 
-os: linux
+# Install LLVM
 addons:
   apt:
+    update: true
     sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise
+      - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main'
+        key_url: 'http://apt.llvm.org/llvm-snapshot.gpg.key'
     packages:
-      - g++-7
-      - clang-format-6.0
+      - llvm-11
+      - llvm-11-dev
+      - llvm-11-tools
+      - clang-11
+      - libclang-common-11-dev
+      - libclang-11-dev 
 
-script:
-  - export CC=gcc-7
-  - export CXX=g++-7
-  - cmake --version
-  - mkdir build && cd build/
-  - cmake .. && make
-  - ./myexample
+env:
+  - CONFIGURATION=Debug
+  - CONFIGURATION=Release
+
+compiler:
+  - clang
+  - gcc
