@@ -14,7 +14,7 @@ addons:
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
-  - python3 run-clang-format.py -r main.c
+  - ./run-clang-format.py -r src
   - export CC=gcc-7
   - export CXX=g++-7
   - cmake --version
