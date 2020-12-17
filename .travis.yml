@@ -14,11 +14,7 @@ addons:
       - llvm-11-tools
       - clang-11
       - libclang-common-11-dev
-      - libclang-11-dev 
-
-env:
-  - CONFIGURATION=Debug
-  - CONFIGURATION=Release
+      - libclang-11-dev
 
 compiler:
   - clang
