@@ -7,30 +7,14 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - llvm-toolchain-trusty-5.0
+      - key_url: 'http://apt.llvm.org/llvm-snapshot.gpg.key'
     packages:
       - g++-7
-
-matrix:
-  include:
-
-    # 1/ Linux Clang Builds
-    - os: linux
-      compiler: clang
-      addons: &clang37
-        apt:
-          sources: ['llvm-toolchain-precise-3.7', 'ubuntu-toolchain-r-test']
-          packages: ['clang-3.7']
-      env: COMPILER='clang++-3.7'
-
-    - os: linux
-      compiler: clang
-      addons: &clang38
-        apt:
-          sources: ['llvm-toolchain-precise-3.8', 'ubuntu-toolchain-r-test']
-          packages: ['clang-3.8']
-      env: COMPILER='clang++-3.8'
+      - clang-format-5.0
 
 script:
+  - run-clang-format.py -r main.c
   - export CC=gcc-7
   - export CXX=g++-7
   - cmake --version
