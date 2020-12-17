@@ -1,13 +1,12 @@
 language: c
 dist: bionic
-sudo: false
 
 compiler:
   - clang
   - gcc
 
 before_script:
-  - apt-get update && apt-get install -y clang-format-7.0 git-core
+  - sudo apt-get update && sudo apt-get install -y clang-format-7.0 git-core
 
 script:
   - echo `which clang-format-7.0`
