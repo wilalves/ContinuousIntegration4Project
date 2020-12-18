@@ -1,4 +1,8 @@
 version: 2.1
+executors:
+  exectr:
+    docker:
+      - image: silverlinings89/cpp_build_environment:latest
 
 jobs:
   build:
@@ -17,6 +21,6 @@ jobs:
 
 workflows:
   version: 2
-  build-and-test:
+  build:
     jobs:
       - build
