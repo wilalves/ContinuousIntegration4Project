@@ -92,11 +92,6 @@ PenaltyReturnTypeOnItsOwnLine: 60
 PointerAlignment: Right
 RawStringFormats: 
   - Language: Cpp
-      Delimiters:
-        - 'cc'
-        - 'cpp'
-      BasedOnStyle: llvm
-      CanonicalDelimiter: 'cc'
 ReflowComments:  true
 SortIncludes:    true
 SortUsingDeclarations: true
