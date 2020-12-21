@@ -6,7 +6,7 @@ compiler:
 
 script:
   - find  -name '*.hpp' -o -name '*.cpp' -o -name '*.h' -o -name '*.c' | xargs clang-format -i
-  -  git diff --color --exit-code
+  - git diff --color --exit-code
   - mkdir build && cd build
   - cmake .. && make
   - ./build/bin/myexample
