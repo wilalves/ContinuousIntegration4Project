@@ -7,5 +7,4 @@ compiler:
 script:
   - mkdir build && cd build
   - cmake .. && make
-  - cd bin
-  - ./myexample
+  - ./build/bin/myexample
