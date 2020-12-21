@@ -20,9 +20,6 @@ jobs:
 
       # Clang-format sources check
       - run: |
-          apt-get update -y
-          apt-get install -y clang-format-3.8
-          ln -s /usr/bin/clang-format-3.8 /usr/bin/clang-format
           SOURCE_FILES=`find ./ -name \*.c -type f -or -name \*.h -type f`
           for SOURCE_FILE in $SOURCE_FILES
           do
