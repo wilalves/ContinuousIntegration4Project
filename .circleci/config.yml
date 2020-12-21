@@ -20,7 +20,7 @@ jobs:
 
       # Clang-format sources check
       - run: |
-          SOURCE_FILES=`find ./ -name \*.c -type f -or -name \*.h -type f`
+          SOURCE_FILES=`find ./ -name \*.cpp -type f -or -name \*.h -type f`
           for SOURCE_FILE in $SOURCE_FILES
           do
             export FORMATTING_ISSUE_COUNT=`clang-format -output-replacements-xml $SOURCE_FILE | grep offset | wc -l`
