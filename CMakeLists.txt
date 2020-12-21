@@ -7,5 +7,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -o3")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY build/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY build/bin)
 
-add_executable(myexample main.c)
+add_executable(myexample main.cpp)
 
