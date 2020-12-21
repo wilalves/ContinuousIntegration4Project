@@ -19,16 +19,11 @@ jobs:
           paths: build
 
       # Clang-format sources check
-      - run: |
-          SOURCE_FILES=`find ./ -name \*.c -type f -or -name \*.h -type f`
-          for SOURCE_FILE in $SOURCE_FILES
-          do
-            export FORMATTING_ISSUE_COUNT=`clang-format -output-replacements-xml $SOURCE_FILE | grep offset | wc -l`
-            if [ "$FORMATTING_ISSUE_COUNT" -gt "0" ]; then
-              echo "Source file $SOURCE_FILE contains formatting issues. Please use clang-format tool to resolve found issues."
-              exit 1
-            fi
-          done
+        - run:
+            name: "Check code format"
+            command: |
+              find  -name '*.hpp' -o -name '*.cpp' -o -name '*.h' -o -name '*.c' | xargs clang-format -i
+              git diff --color --exit-code
 
   test:
     executor: exectr
