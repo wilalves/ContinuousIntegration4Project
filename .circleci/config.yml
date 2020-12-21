@@ -19,11 +19,11 @@ jobs:
           paths: build
 
       # Clang-format sources check
-        - run:
-            name: "Check code format"
-            command: |
-              find  -name '*.hpp' -o -name '*.cpp' -o -name '*.h' -o -name '*.c' | xargs clang-format -i
-              git diff --color --exit-code
+      - run:
+          name: "Check code format"
+          command: |
+            find  -name '*.hpp' -o -name '*.cpp' -o -name '*.h' -o -name '*.c' | xargs clang-format -i
+            git diff --color --exit-code
 
   test:
     executor: exectr
